@@ -3,6 +3,7 @@
     --white-color: #fff;
     --black-color: #000;
     --text-color: #ccc;
+    --yellow-color:rgba(255, 216, 64, 0.94);
     --orange-color: #ff7337;
     --border-color: #dbdbdb;
     --navbar-height:34px;
@@ -20,6 +21,7 @@ html{
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
+/* }réponsive */
 .grip{
     width: 1200px;
     max-width: 100%;
@@ -29,9 +31,31 @@ html{
 .grip__full-with{
     width: 100%;
 }
-.grip__row{
+.grip_row{
     display: flex;
     flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+/* test  */
+.grip_column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+    display: inline-block;
+   
+}
+.grip_column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334% ;
+    float: right;
+   
+}
+.grip_column-2-4{
+     padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
 }
 /*ANIMTION*/
 @keyframes fadeIn{
@@ -51,19 +75,26 @@ html{
          transform: scale(var(--growth-to));
     }
 }
-/* moadl */
+/* modal */
 .modal{
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
     top: 0;
+    display: none;
     right: 0;
     bottom: 0;
     left: 0;
     background-color: rgba(0, 0, 0, 0.5);
-    display: none;
     animation: fadeIn linear 0.2s
+}
+
+.open{
+    display: flex;
+}
+.active{
+    display: flex;
 }
 
 .modal_overlay{
@@ -85,7 +116,7 @@ html{
 }
 /* button style */
 .btn{
-    min-width: 142px;
+    min-width: 124px;
     height: 34px;
     text-decoration: none;
     border: none;
@@ -94,7 +125,7 @@ html{
     font-size: 1.5rem;
     background-color: var(--white-color);
     cursor: pointer;
-    display: flex;
+    display: inline-flex;
     justify-content: center;
     align-items: center;
     line-height: 1.6rem;
@@ -114,4 +145,88 @@ html{
     height: 32px;
     font-size: 12px;
     padding: 0 8px;
+}
+/* select -tion */
+.select-input{
+    padding: 0 12px;
+    height: 34px;
+    min-width: 200px;
+    border-radius: 2px;
+    display: flex;
+    background-color: var(--white-color);
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+}
+.select-input-label{
+    font-size: 1.4rem;
+}
+.select-input-icon{
+    font-size: 1.4rem;
+    color: rgb(131, 131, 131);
+    position: relative;
+    top: 1px;
+}
+.select-input-list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 35px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 10px 16px;
+    list-style: none;
+    display: none;
+    z-index: 1;
+}
+.select-input-link{
+    font-size: 1.4rem;
+    color: var(--black-color);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+.select-input-link:hover{
+    color: var(--primary-color) ;
+}
+.select-input:hover .select-input-list{
+    display: block;
+}
+/* pagination */
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+.pagination-item{
+   margin: 0 12px;
+
+
+}
+.pagination-item-link{
+    text-decoration: none;
+    font-size: 2rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    display: block;
+    line-height: 30px;
+    text-align: center;
+    border-radius: 2px;
+    font-weight: 300;
+    
+}
+.pagination-item-icon{
+
+}
+.pagination-item-active .pagination-item-link{
+    background-color: var(--primary-color);
+    color: var(--white-color);
+}
+.pagination-item-active .pagination-item-link:hover{
+    background-color: #ed5c3f;
+}
+.home-product-pagination{
+    margin: 32px 0 48px 0;
 }
